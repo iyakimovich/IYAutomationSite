@@ -24,6 +24,7 @@ public class App
         WebDriverManager.chromedriver().setup();
 
         ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--incognito");
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver(chromeOptions);
 
@@ -32,21 +33,24 @@ public class App
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
         try {
-            driver.get("https://lenta.ru/");
+            driver.get("https://www.ebay.com/");
 
+            //Click on sign-in
+            driver.findElement(By.id("gh-ug")).click();
 
-            String selectorLogin = "#js-sidebar__menu-auth > a";
-            wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector(selectorLogin)));
-            WebElement enterLink = driver.findElement(By.cssSelector(selectorLogin));
-            enterLink.click();
+            //Log in
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("userid")));
+            driver.findElement(By.id("userid")).sendKeys("inna.yakimovich@gmail.com");
 
-            WebElement iFrameLogin = driver.findElement(By.xpath("//div[@data-id-frame='own']/iframe"));
-            wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(iFrameLogin));
-            WebDriver driverLoginiFrame = driver.switchTo().frame(iFrameLogin);
+            //Continue button
+            driver.findElement(By.id("signin-continue-btn")).click();
 
-            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login")));
-            WebElement email = driverLoginiFrame.findElement(By.id("login"));
-            email.sendKeys("inna.yakimovich@gmail.com");
+            //Password
+            wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("pass")));
+            driver.findElement(By.id("pass")).sendKeys("EB_pwd123!");
+
+            //Sign in button
+            driver.findElement(By.id("sgnBt")).click();
 
         } finally {
             //driver.quit();
