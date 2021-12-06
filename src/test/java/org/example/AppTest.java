@@ -49,17 +49,17 @@ public class AppTest {
 
         wait = new WebDriverWait(driver, Duration.ofSeconds(15));
 
-        driver.get("https://crm.geekbrains.space/user/login");
+        driver.get("https://www.livejournal.com/media");
 
         //Login
-        WebElement login = driver.findElement(By.id("prependedInput"));
-        login.sendKeys("Applanatest1");
+        WebElement login = driver.findElement(By.cssSelector("a.s-header-item__link--login"));
+        login.click();
 
-        WebElement password = driver.findElement(By.id("prependedInput2"));
-        password.sendKeys("Student2020!");
+        //Place credentials and click login button
+        driver.findElement(By.id("user")).sendKeys("iayakimovich");
+        driver.findElement(By.id("lj_loginwidget_password")).sendKeys("GB_pwd123!");
+        driver.findElement(By.cssSelector("button.b-loginform-btn")).submit();
 
-        WebElement enter = driver.findElement(By.id("_submit"));
-        enter.submit();
     }
 
     @AfterEach
