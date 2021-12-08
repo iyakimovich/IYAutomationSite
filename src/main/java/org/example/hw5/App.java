@@ -1,4 +1,4 @@
-package org.example;
+package org.example.hw5;
 
 public class App
 {

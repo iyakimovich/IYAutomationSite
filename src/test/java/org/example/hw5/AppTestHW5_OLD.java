@@ -1,4 +1,4 @@
-package org.example;
+package org.example.hw5;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
@@ -22,12 +22,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 
-public class AppTest {
+public class AppTestHW5_OLD {
     private static ChromeOptions chromeOptions;
     private WebDriver driver;
     private WebDriverWait wait;
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(AppTest.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(AppTestHW5_OLD.class);
 
     @BeforeAll
     public static void runBeforeAllTests() {
