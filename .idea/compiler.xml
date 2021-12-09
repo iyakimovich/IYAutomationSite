@@ -9,5 +9,8 @@
         <module name="IYAutomationSite" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="untitled1" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

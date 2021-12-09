@@ -29,6 +29,7 @@ public class AppTestHW5_OLD {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(AppTestHW5_OLD.class);
 
+    @Disabled
     @BeforeAll
     public static void runBeforeAllTests() {
         LOGGER.info("runBeforeAllTests() - started");
@@ -41,6 +42,8 @@ public class AppTestHW5_OLD {
         LOGGER.info("runBeforeAllTests() - done");
     }
 
+
+    @Disabled
     @BeforeEach
     public void runBeforeEach() {
         LOGGER.info("runBeforeEach() - started");
@@ -62,6 +65,7 @@ public class AppTestHW5_OLD {
 
     }
 
+    @Disabled
     @AfterEach
     public void runAfterEach() throws InterruptedException {
         LOGGER.info("runAfterEach() - started");
@@ -71,6 +75,7 @@ public class AppTestHW5_OLD {
         LOGGER.info("runAfterEach() - done");
     }
 
+    @Disabled
     @Test
     public void ljLogin() {
         LOGGER.info("ljLogin() - started");
@@ -81,6 +86,7 @@ public class AppTestHW5_OLD {
         LOGGER.info("ljLogin() - done");
     }
 
+    @Disabled
     @Test
     public void ljLogOff() {
         LOGGER.info("ljLogOff() - started");
@@ -102,6 +108,7 @@ public class AppTestHW5_OLD {
         LOGGER.info("ljLogOff() - done");
     }
 
+    @Disabled
     @Test
     public void shopLink() {
         LOGGER.info("shopLink - started");
@@ -115,6 +122,7 @@ public class AppTestHW5_OLD {
         LOGGER.info("shopLink - finished");
     }
 
+    @Disabled
     @Test
     public void checkFirstCategory() {
         LOGGER.info("postBlogEntry() - started");
